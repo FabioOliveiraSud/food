@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdicionarItensViewController" customModule="Food_list" customModuleProvider="target">
+            <connections>
+                <outlet property="caloriasTextField" destination="a8L-qz-yQC" id="Wq7-Ly-FdH"/>
+                <outlet property="nomeTextField" destination="FMu-7Q-ckR" id="NCT-WG-7vy"/>
+                <outlet property="view" destination="cFF-bW-k4o" id="1FT-h0-EVt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cFF-bW-k4o">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calorias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2b-HH-enf">
+                    <rect key="frame" x="16" y="162" width="62" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FMu-7Q-ckR">
+                    <rect key="frame" x="86" y="101" width="291" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8L-qz-yQC">
+                    <rect key="frame" x="86" y="155" width="291" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAW-ni-WfF">
+                    <rect key="frame" x="149" y="241" width="96" height="35"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Adicionar">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="adicionarItem:" destination="-1" eventType="touchUpInside" id="xaP-eh-Eqh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5F-8i-bvL">
+                    <rect key="frame" x="16" y="108" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="4l4-O3-fLi"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FMu-7Q-ckR" firstAttribute="leading" secondItem="H5F-8i-bvL" secondAttribute="trailing" constant="19" id="3wS-D5-lyv"/>
+                <constraint firstItem="f2b-HH-enf" firstAttribute="leading" secondItem="4l4-O3-fLi" secondAttribute="leading" constant="16" id="92d-5E-b1v"/>
+                <constraint firstItem="a8L-qz-yQC" firstAttribute="leading" secondItem="f2b-HH-enf" secondAttribute="trailing" constant="8" symbolic="YES" id="GcX-ZU-7mI"/>
+                <constraint firstItem="H5F-8i-bvL" firstAttribute="leading" secondItem="4l4-O3-fLi" secondAttribute="leading" constant="16" id="MA6-Xh-NFl"/>
+                <constraint firstItem="4l4-O3-fLi" firstAttribute="trailing" secondItem="ZAW-ni-WfF" secondAttribute="trailing" constant="148" id="NuC-Vl-EBP"/>
+                <constraint firstItem="4l4-O3-fLi" firstAttribute="trailing" secondItem="FMu-7Q-ckR" secondAttribute="trailing" constant="16" id="PHT-sx-PNA"/>
+                <constraint firstItem="4l4-O3-fLi" firstAttribute="bottom" secondItem="ZAW-ni-WfF" secondAttribute="bottom" constant="542" id="Rzh-oo-wtn"/>
+                <constraint firstItem="ZAW-ni-WfF" firstAttribute="leading" secondItem="4l4-O3-fLi" secondAttribute="leading" constant="149" id="Z7g-9W-604"/>
+                <constraint firstItem="ZAW-ni-WfF" firstAttribute="top" secondItem="a8L-qz-yQC" secondAttribute="bottom" constant="52" id="erV-xi-fFp"/>
+                <constraint firstItem="f2b-HH-enf" firstAttribute="top" secondItem="H5F-8i-bvL" secondAttribute="bottom" constant="33" id="gB8-yt-qXy"/>
+                <constraint firstItem="4l4-O3-fLi" firstAttribute="bottom" secondItem="f2b-HH-enf" secondAttribute="bottom" constant="635" id="hg4-kD-7d4"/>
+                <constraint firstItem="4l4-O3-fLi" firstAttribute="trailing" secondItem="a8L-qz-yQC" secondAttribute="trailing" constant="16" id="hiJ-zg-Wui"/>
+                <constraint firstItem="a8L-qz-yQC" firstAttribute="top" secondItem="FMu-7Q-ckR" secondAttribute="bottom" constant="20" id="xnA-bQ-bbO"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
