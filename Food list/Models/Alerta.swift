@@ -16,12 +16,10 @@ class Alerta {
         self.controller = controller
     }
     
-    func exibe() {
-        
-        let alerta = UIAlertController(title: "Desculpe", message: "desculpe não foi possível atualizar a tabela", preferredStyle: .alert)
+    func exibe(title: String = "Desculpe", mensagem: String) {
+        let alerta = UIAlertController(title: title, message: mensagem, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .cancel)
         alerta.addAction(ok)
-        
         controller.present(alerta, animated: true)
         
     }

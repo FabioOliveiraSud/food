@@ -45,11 +45,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func add(_ item: Item) {
         itens.append(item)
-        //itensTableView?.reloadData()
         if let tableView = itensTableView {
             tableView.reloadData()
         } else {
-            Alerta(controller: self).exibe()
+            Alerta(controller: self).exibe(mensagem: "Nāo foi possível atualiza a tabela")
         }
         
     }
