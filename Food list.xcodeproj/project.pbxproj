@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF357E1E29AD1B3C009A2BD8 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF357E1D29AD1B3C009A2BD8 /* Alerta.swift */; };
+		AF357E2029B2964B009A2BD8 /* RemoveRefeicaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF357E1F29B2964B009A2BD8 /* RemoveRefeicaoViewController.swift */; };
 		AFD6A535298B0561007B9E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6A534298B0561007B9E7E /* AppDelegate.swift */; };
 		AFD6A537298B0561007B9E7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6A536298B0561007B9E7E /* SceneDelegate.swift */; };
 		AFD6A539298B0561007B9E7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6A538298B0561007B9E7E /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		AF357E1D29AD1B3C009A2BD8 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
+		AF357E1F29B2964B009A2BD8 /* RemoveRefeicaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveRefeicaoViewController.swift; sourceTree = "<group>"; };
 		AFD6A531298B0561007B9E7E /* Food list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD6A534298B0561007B9E7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD6A536298B0561007B9E7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				AFD6A538298B0561007B9E7E /* ViewController.swift */,
 				AFD6A56C298B070A007B9E7E /* AdicionarItensViewController.swift */,
 				AFD6A570298B07B6007B9E7E /* RefeicoesTableViewController.swift */,
+				AF357E1F29B2964B009A2BD8 /* RemoveRefeicaoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				AFD6A56E298B070A007B9E7E /* AdicionarItensViewController.swift in Sources */,
 				AFD6A53F298B0561007B9E7E /* Food_list.xcdatamodeld in Sources */,
 				AFD6A573298B0800007B9E7E /* Refeicao.swift in Sources */,
+				AF357E2029B2964B009A2BD8 /* RemoveRefeicaoViewController.swift in Sources */,
 				AFD6A575298B0823007B9E7E /* Item.swift in Sources */,
 				AFD6A571298B07B6007B9E7E /* RefeicoesTableViewController.swift in Sources */,
 				AFD6A535298B0561007B9E7E /* AppDelegate.swift in Sources */,

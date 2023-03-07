@@ -36,6 +36,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         let botaoAdiconaItem = UIBarButtonItem(title: "Adicionar", style: .plain, target: self, action: #selector(adicionarItens))
         navigationItem.rightBarButtonItem = botaoAdiconaItem
+        
+        do {
+            guard let diretorio = recuperaDiretorio() else { return }
+            let dados = try Data(contentsOf: diretorio)
+            let itensSalvos = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(dados) as! Array<Item>
+            
+            itens = itensSalvos
+        }catch {
+            print(error.localizedDescription)
+        }
     }
     
     @objc func adicionarItens() {
@@ -50,7 +60,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             Alerta(controller: self).exibe(mensagem: "Nāo foi possível atualiza a tabela")
         }
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: itens, requiringSecureCoding: false)
+            guard let caminho = recuperaDiretorio() else { return }
+            try data.write(to: caminho)
+            
+        }catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func recuperaDiretorio() -> URL? {
+        guard let diretorio = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let caminho = diretorio.appending(path: "itens")
         
+        return caminho
     }
     
     // MARK: - UITableViewDataSource
@@ -61,7 +85,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        
         let tableViewLine = indexPath.row
         let item = itens[tableViewLine]
         
@@ -89,26 +112,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-
-    // MARK: - IBActions
     
-    @IBAction func adicionar(_ sender: Any) {
-        
+    func recuperaRefeicaoDoFormulario() -> Refeicao? {
         guard let nomeDaRefeicao = nomeTextField?.text else {
-            return
+            return nil
         }
         
         guard let felicidadeDaRefeicao = felicidadeTextField?.text, let felicidade = Int(felicidadeDaRefeicao) else {
-            return
+            return nil
         }
         
         let refeicao = Refeicao(nome: nomeDaRefeicao, felicidade: felicidade, itens: itensSelecionados)
         refeicao.itens = itensSelecionados
         
-        print("comi \(refeicao.nome) e fiquei com felicidade: \(refeicao.felicidade)")
+        return refeicao
+    }
 
+    // MARK: - IBActions
+    
+    @IBAction func adicionar(_ sender: Any) {
+        
+        guard let refeicao = recuperaRefeicaoDoFormulario() else {return}
         tabelaDeRefeicao?.adicionar(refeicao)
-
         navigationController?.popViewController(animated: true)
+        Alerta(controller: self).exibe(mensagem: "Erro ao ler dados do formulário")
     }
 }
